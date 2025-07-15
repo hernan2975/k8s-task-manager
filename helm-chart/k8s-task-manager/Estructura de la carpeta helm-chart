@@ -1,0 +1,11 @@
+helm-chart/
+└── k8s-task-manager/
+    ├── Chart.yaml
+    ├── values.yaml
+    └── templates/
+        ├── api-deployment.yaml
+        ├── api-service.yaml
+        ├── web-deployment.yaml
+        ├── web-service.yaml
+        ├── configmap.yaml
+        └── secret.yaml
