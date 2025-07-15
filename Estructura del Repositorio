@@ -1,0 +1,33 @@
+📁 Estructura de carpetas profesional
+
+k8s-task-manager/
+├── api/                # Backend FastAPI o Node
+│   ├── Dockerfile
+│   ├── src/
+│   └── requirements.txt
+├── web/                # Frontend React o estático
+│   ├── Dockerfile
+│   ├── public/
+│   └── src/
+├── k8s/
+│   ├── deployments/
+│   ├── services/
+│   ├── ingress/
+│   ├── volumes/
+│   ├── configmaps/
+│   └── secrets/        # Evitá subirlos, usá .gitignore
+├── helm-chart/
+│   └── k8s-task-manager/
+│       ├── templates/
+│       ├── values.yaml
+│       └── Chart.yaml
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+├── scripts/
+│   └── init-db.sh
+├── Makefile
+├── README.md
+├── .gitignore
+└── .gitattributes
+
