@@ -41,3 +41,22 @@ jobs:
         context: ./web
         push: true
         tags: ${{ env.IMAGE_WEB }}:latest
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v4
+
+    - name: Set up Kubeconfig
+      run: |
+        echo "${{ secrets.KUBECONFIG_DATA }}" | base64 -d > kubeconfig
+        export KUBECONFIG=$PWD/kubeconfig
+
+    - name: Install Helm
+      uses: azure/setup-helm@v3
+
+    - name: Deploy con Helm
+      run: |
+        helm upgrade --install k8s-task-manager ./helm-chart/k8s-task-manager --kubeconfig kubeconfig
