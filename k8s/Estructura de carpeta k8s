@@ -1,0 +1,7 @@
+k8s/
+├── api-deployment.yaml
+├── api-service.yaml
+├── web-deployment.yaml
+├── web-service.yaml
+├── configmap.yaml
+├── secret.yaml
