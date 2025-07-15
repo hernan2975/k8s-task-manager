@@ -1,0 +1,11 @@
+web/
+├── public/
+│   └── index.html
+├── src/
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── api.ts
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── Dockerfile
