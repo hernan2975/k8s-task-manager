@@ -1,0 +1,6 @@
+apiVersion: v2
+name: k8s-task-manager
+description: Microservicios API y Web con Helm
+type: application
+version: 1.0.0
+appVersion: "1.0"
