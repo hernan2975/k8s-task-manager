@@ -1,0 +1,18 @@
+* text=auto
+
+# Lenguajes principales del backend
+*.py linguist-language=Python
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.sh linguist-language=Shell
+
+# Docker y DevOps
+Dockerfile linguist-language=Dockerfile
+*.env linguist-language=INI
+
+# Frontend si lo agregás más adelante
+*.js linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+
