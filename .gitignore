@@ -1,46 +1,55 @@
-# === PYTHON ===
+# === Python ===
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
-*.pyc
-*.egg-info/
+*.env
 .env
-.venv/
 venv/
-Pipfile.lock
+.env.*
 
-# === NODE (por si usás algo en el frontend) ===
+# === Node ===
 node_modules/
-build/
 dist/
-
-# === DOCKER ===
-*.tar
+build/
+.vite/
+.cache/
 *.log
 
-# === KUBERNETES ===
+# === Docker ===
+*.tar
+*.log
+docker-compose.override.yml
+
+# === Kubernetes ===
 *.yaml~
 secrets/
+kubeconfig
 *.crt
 *.key
 
-# === EDITORES ===
+# === Vite ===
+*.vite
+
+# === Helm ===
+*.tgz
+charts/
+tmpcharts/
+helm-chart/k8s-task-manager/.helmignore
+
+# === Scripts y backups ===
+*.bak
+*.swp
+*.tmp
+*.old
+
+# === Editores ===
 .vscode/
 .idea/
-*.swp
+*.sublime*
 .DS_Store
-*.bak
-
-# === TEST ===
-coverage/
-htmlcov/
-.tox/
-pytest_cache/
-.cache/
-
-# === SISTEMA ===
 Thumbs.db
-ehthumbs.db
-Desktop.ini
 
+# === Otros ===
+*.pid
+*.sock
