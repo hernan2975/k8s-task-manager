@@ -1,44 +1,87 @@
-# 🧩 K8s Task Manager
+🚀 k8s-task-manager
 
-Proyecto de microservicios desplegado en Kubernetes. Incluye frontend, backend, PostgreSQL, Redis y observabilidad con Prometheus y Grafana. Ideal como plantilla para proyectos reales en clústeres.
+Microservicios para una app de gestión de tareas, desplegados con Kubernetes y Helm, con CI/CD, observabilidad y mejores prácticas DevOps.
 
-## 🚀 Características
+🧱 Estructura del proyecto
 
-- Orquestación con Kubernetes (compatible con Minikube/KinD)
-- CI/CD con GitHub Actions
-- Infraestructura como código con Helm
-- Base de datos persistente (PostgreSQL)
-- Cache y mensajería con Redis
-- Observabilidad: métricas, logs y dashboard
-- Escalabilidad y probes configurados
 
-## 📂 Estructura
 k8s-task-manager/
-├── api/
-├── web/
-├── k8s/
-├── helm-chart/
-├── .github/workflows/
-├── scripts/
-└── README.md
-
-## 🛠️ Despliegue local
-
-```bash
-make start-minikube
-kubectl apply -f k8s/
+├── api/             # Backend FastAPI (Python)
+├── web/             # Frontend React (Vite)
+├── k8s/             # Manifiestos Kubernetes
+├── helm-chart/      # Helm Chart profesional
+├── .github/         # Workflows de CI/CD
+├── scripts/         # Scripts útiles para automatizar
+├── Makefile         # Comandos rápidos
 
 📦 Requisitos
-Docker
 
-Kubernetes (Minikube o Kind)
+- Docker
+- Minikube o clúster Kubernetes
+- Helm v3+
+- Git
+- Python (solo si usás FastAPI localmente)
+- Node.js (para frontend local opcional)
 
-Helm 3
+🛠️ Cómo usar el proyecto
 
-kubectl
+🔁 Clonar el repositorio
 
-Python 3.10+ / Node.js (según stack elegido)
+```bash
+git clone https://github.com/tu_usuario/k8s-task-manager.git
+cd k8s-task-manager
 
-📄 Licencia
-MIT
 
+#🐳 Construir imágenes
+
+```bash
+bash scripts/build-images.sh
+```
+ 🚀 Subir a Minikube
+
+```bash
+bash scripts/load-images-to-minikube.sh
+```
+
+☸️ Desplegar en Kubernetes
+
+Opción A: con manifiestos YAML
+
+```bash
+bash scripts/deploy-local.sh
+```
+
+Opción B: con Helm
+
+```bash
+bash scripts/deploy-helm.sh
+```
+
+🔐 Crear secreto para la base de datos
+
+```bash
+bash scripts/create-secret.sh
+```
+
+✅ CI/CD automático
+
+Se activa con cada push a `main`:
+
+* Construye imágenes Docker (`api`, `web`)
+* Sube a Docker Hub
+* Despliega vía Helm a Kubernetes (si hay KUBECONFIG)
+
+Configuración de secretos necesaria:
+
+* `DOCKER_USERNAME`
+* `DOCKER_PASSWORD`
+* `KUBECONFIG_DATA` (solo si hacés deploy desde GitHub)
+
+🧪 Pruebas rápidas
+
+* API: `curl http://localhost:8000/tasks`
+* Web: Abrir `minikube service web-service` en el navegador
+
+📃 Licencia
+
+MIT 
