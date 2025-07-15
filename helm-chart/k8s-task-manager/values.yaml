@@ -1,0 +1,11 @@
+api:
+  image: k8s-task-manager-api
+  port: 8000
+  replicas: 1
+  databaseUrl: postgresql://user:password@postgres-service:5432/tasks_db
+
+web:
+  image: k8s-task-manager-web
+  port: 80
+  replicas: 1
+
