@@ -1,0 +1,6 @@
+
+scripts/
+├── build-images.sh
+├── load-images-to-minikube.sh
+├── deploy-local.sh
+├── delete-all.sh
