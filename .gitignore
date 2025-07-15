@@ -1,0 +1,46 @@
+# === PYTHON ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg-info/
+.env
+.venv/
+venv/
+Pipfile.lock
+
+# === NODE (por si usás algo en el frontend) ===
+node_modules/
+build/
+dist/
+
+# === DOCKER ===
+*.tar
+*.log
+
+# === KUBERNETES ===
+*.yaml~
+secrets/
+*.crt
+*.key
+
+# === EDITORES ===
+.vscode/
+.idea/
+*.swp
+.DS_Store
+*.bak
+
+# === TEST ===
+coverage/
+htmlcov/
+.tox/
+pytest_cache/
+.cache/
+
+# === SISTEMA ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
